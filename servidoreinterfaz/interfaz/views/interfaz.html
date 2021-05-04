@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Maquina de ensayos</title>
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="icon" type="image/png" href="img/icons/icon.png"/>
+<style>
+.grid-container  {
+    background: rgba(16, 107, 31,.3);
+    max-width: 1300px;
+    width: 100%;
+    margin: 48px auto;
+    border-radius: 10px;
+    color: #fff;
+    position: relative;
+    padding: 10px;
+}
+
+
+
+p,label{
+   font-size:20px;
+   
+}
+
+input[type=image]{ border: 0px; width: 5em; height: 5em; } 
+
+img{
+    width:65px;
+    height:65px;
+   } 
+
+input[type=text]{  width: 5em;                         }
+
+
+
+</style>
+</head>
+<body>
+ 
+ <div class="grid-container">
+    <div class="iconos">
+     <img src="img/ok.png"  id ="temp">
+	 <img src="img/oilok.png"  id ="oil"> 
+	 <input type="image" src="img/offmotor.png" onclick="suiches(1)" id="hidra1">  
+	 <input type="image" src="img/onemergencia .png" onclick="suiches(0)" id="hidra2"> 
+	 <input type="image" src="img/pausaon.png" onclick="suiches(3)" id="pausa">
+	 <input type="image" src="img/subiroff.png" onclick="suiches(2)" id="subir">
+	 <input type="image" src="img/bajaroff.png" onclick="suiches(4)" id="bajar">
+	 <input type="image" src="img/lateraloff.png" onclick="suiches(5)" id="lateral">
+	 <input type="image" src="img/probeta.png" onclick="myFunction2()" id="probeta">
+	 <input type="image" src="img/control.png" onclick="myFunction()" id="control">
+	 <input type="image" src="img/salida.png" onclick="myFunction()" id="salir">
+	</div>
+	
+	
+    <div class="lateral"> 
+	
+	    <div id='data'>
+		<label for="velocidad">Velocidad:</label>  <input type="text" id="velocidad" name="velocidad"> <button onclick="velocidad()">GUARDAR</button> 
+		<label for="velocidad">Tolerancia rotura:</label>  <input type="text" id="tolerancia" name="tolerancia"> <button onclick="tolerancia()">GUARDAR</button> 
+          <p id="demo">Posicion:</p>
+		  <p id="demo1">Fuerza:</p>
+		  <p id="demo2">Area:</p>
+		  <p id="demo3">Longitud:</p>
+		  <p id="demo4">Fuerza Maxima</p>
+		  <p id="demo5">Velocidad actual:</p></div>
+		<div id='medida'  style="display:none;">
+		    <input type="image" src="img/cilindrica.png" onclick="myFunction4()" id="cilindrica">
+			<input type="image" src="img/rectangular.png" onclick="myFunction3()" id="rectangular">
+			<input type="image" src="img/otra.png" onclick="myFunction5()" id="otra">
+			
+			<div id='textcilindrica' style="display:none;">  
+			
+				<div  style="display:block;"> <label for="diametro">Diametro:</label>  <input type="text" id="diametro" name="diametro"> <button onclick="velocidad()">GUARDAR</button></div>       
+				<div  style="display:block;"> <label for="longitud">Longitud:</label>  <input type="text" id="longitud" name="longitud"> <button onclick="velocidad()">GUARDAR</button></div>           
+			</div>
+			
+			<div id='textrectangular' style="display:none;">  <div  style="display:block;"> 
+			
+				<label for="lado1">Lado1:</label>  <input type="text" id="lado1" name="lado1"> <button onclick="velocidad()">GUARDAR</button></div>       
+				<div  style="display:block;"> <label for="lado2">Lado2:</label>  <input type="text" id="lado2" name="lado2"> <button onclick="velocidad()">GUARDAR</button></div>           
+				<div  style="display:block;"> <label for="longitud">Longitud:</label>  <input type="text" id="longitud" name="longitud"> <button onclick="velocidad()">GUARDAR</button></div>           
+
+
+			</div>
+			
+			<div id='Area' style="display:none;">  
+			
+				<div  style="display:block;"> <label for="area1">Area:</label>  <input type="text" id="area1" name="area1"> <button onclick="velocidad()">GUARDAR</button></div>       
+			</div>
+			
+			
+			
+			
+		</div>
+		<div id='pid'   style="display:none;">
+		 <div  style="display:block;"> <label for="p">P:</label>  <input type="text" id="p" name="p"> <button onclick="velocidad()">GUARDAR</button></div>
+		 <label for="i">I:</label>  <input type="text" id="i" name="velocidad"> <button onclick="velocidad()">GUARDAR</button>
+		 <div style="display:block;"><label for="d">D:</label>  <input type="text" id="d" name="velocidad"> <button onclick="velocidad()">GUARDAR</button></div>
+		</div> 	  
+	</div>
+	
+  <div class="grafica"> <canvas id="myChart1" >[No canvas support]</canvas> </div>
+  
+  <div class="lateral2"> <input type="button" value="BORRAR" onclick="removeData(datos3)"  style="display:block;">
+  <input type="button" value="GRAFICAR" onclick="showPosition()">
+  <button onclick="exportTableToCSV()">GUARDAR DATOS</button>
+  <p id="demo"></p>
+   </div>
+</div>
+  
+  
+  <div id="tablePrint"> </div>
+  <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/creartabla.js"></script>
+  <script src="js/jquery-3.1.1.min.js"></script>
+  
+  <script src="js/grafico.js"></script>
+</body>
+</html>

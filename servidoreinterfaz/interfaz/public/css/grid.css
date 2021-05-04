@@ -1,0 +1,139 @@
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+body {
+    /* background: url(../img/bg2.jpg); */
+	background:#0d130b;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Roboto;
+}
+
+
+
+
+.iconos {
+  grid-area:iconos;
+  /* background-color: #85aedd; */
+}
+
+.lateral {
+  grid-area: lateral;
+  /* background-color: #afd6af; */
+}
+
+.grafica {
+  grid-area: grafica;
+  /* background-color: #fdcfcf; */
+}
+
+
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+      "iconos  iconos" 100px
+      "lateral  grafica" 450px/
+      310px     950px;
+}
+
+/* @media (min-width: 600px) { */
+  /* .grid-container { */
+    /* /* grid-template-columns: 200px auto; */
+    /* grid-template-rows: 100px 50px auto 100px; */
+    /* grid-template-areas:  */
+    /* "header  header" */
+    /* "navbar  navbar" */
+    /* "sidebar main" */
+    /* "footer  footer"; */ */
+
+    /* grid-template: */
+      /* "header  header" 100px */
+      /* "navbar  navbar" 50px */
+      /* "sidebar main"   auto */
+      /* "footer  footer" 100px / */
+      /* 200px    auto; */
+  /* } */
+/* } */
+
+/* @media (min-width: 900px) { */
+  /* .grid-container { */
+    /* grid-template: */
+      /* "header  header header"  100px */
+      /* "navbar  main   sidebar" auto */
+      /* "footer  footer footer"  100px / */
+      /* 200px    auto   200px; */
+  /* } */
+/* } */
+
+
+ input[type="text"],
+ input[type="password"]{
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0 0 20px 0;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid #1c6113;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight:normal;
+    transition: all .5s ease;
+}
+
+ input[type="text"]:focus,
+ input[type="password"]:focus{
+    border-bottom: 4px solid #00d933;
+}
+
+input[type="submit"],
+input[type="button"],
+ button {
+    background: #1c6113;
+    color: #FFF;
+    /* width: 100%; */
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Roboto;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .5s ease;
+	border-radius:10px;
+}
+
+input[type="submit"]:active,
+input[type="button"]:active,
+ button:active,
+ input [type="image"]:active{
+	
+	transform: scale(0.9);
+	
+	
+	
+}
+ input[type="submit"]:hover,
+ input[type="button"]:hover,
+ button:hover {
+    background: #00d933;
+}
